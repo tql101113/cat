@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>第2关</title>
+    <style>
+    .center {
+        text-align: center;
+        margin: auto;
+        width: 60%;
+        border: 3px solid #73AD21;
+        padding: 10px;
+    }
+    .img{
+        width:200px;
+        height:200px;
+        padding:0px;
+        margin:0px;
+        vertical-align:middle;}
+    .button {
+    background-color:#FA8072; 
+    border: 1px solid green;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+}
+    .button2{
+    background-color:#8FBC8F; 
+    border: 1px solid green;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+   
+  }
+
+    .button:hover {
+    background-color: #D2B48C;
+}
+    #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+    #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+    </style>
+</head>
+<body>  
+    <div class="center">
+    <img src="img/标题.png" alt="title" width="214.5" height="115.5"/ ><br>
+    <p><h1>二年级：方块图中哪个颜色最多？<h1></p>
+        <img class="img" src="img/色块.png" alt="choice" width="466" height="319.5"/ >
+        <input type="button" class="button2" onclick="myFunction1()"value="红色"/>
+        <input type="button" class="button2" onclick="myFunction1()"value="黄色"/>
+        <input type="button" class="button2" onclick="myFunction1()"value="蓝色"/>
+        <a href="第3关.html"><input type="button" class="button2" value="白色"/></a>
+<img src="img/hi鸭.gif" alt="title" width="200" height="200"/>
+        <br><br>
+
+        <button class="button" onclick="myFunction2()">提示</button>
+        <div id="snackbar">别被框框迷惑！</div>
+        <a href="第3关.html"><button class="button">跳过</button></a>
+        <a href="第2关.html"><button class="button">重来</button></a>
+
+        <div id="timer" style="color:Brown"></div>
+</body>
+<script type="text/javascript"> 
+    //回答错误
+    function myFunction1(){
+        alert("回答错误，游戏结束!\n你的测试结果为“一年级智商”。");
+    }
+    
+    //底部弹出消息
+    function myFunction2() {
+    var x = document.getElementById("snackbar")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+    //计时器提醒
+            var oBox= document.getElementById('timer');       
+            var maxtime = 1 * 60;  
+            function CountDown() {
+                if (maxtime >= 0) {
+                    seconds = Math.floor(maxtime % 60);
+                    msg = "距离结束还有" + seconds + "秒";
+                    oBox.innerHTML = msg;
+                    if (maxtime == 30)alert("还剩30秒\n抓紧时间呦！");
+                                --maxtime;
+                    } else{
+                            clearInterval(timer);
+                            alert("时间到，游戏结束!\n你的测试结果为“一年级智商”。");
+                        }
+                    }
+                    timer = setInterval("CountDown()", 1000);                
+</script>
+</html>

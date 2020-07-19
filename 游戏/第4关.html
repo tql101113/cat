@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>第4关</title>
+    <style>
+    .center {
+        text-align: center;
+        margin: auto;
+        width: 60%;
+        border: 3px solid #73AD21;
+        padding: 10px;
+    }
+}  
+    .img{
+        padding:0px;
+        margin:0px;
+        vertical-align:middle;}
+    #demo{
+    	color:#FFA07A;
+    }
+  .button {
+    background-color:#FA8072; 
+    border: 1px solid green;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+}
+.button:hover {
+    background-color: #D2B48C;
+}
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+    </style>
+</head>
+<body>  
+    <div class="center">
+    <img src="img/标题.png" alt="title" width="214.5" height="115.5"/ ><br>
+    <p><h1>四年级：煮一个鸡蛋需要四分钟。<br>
+    	煮3个鸡蛋需要几分钟？<h1></p>
+    		<input id="numb">
+<button type="button" onclick="myFunction3()">提交</button>
+<p id="demo"></p>
+        <img src="img/鸡蛋.jpg" alt="choice" width="400" height="200"/ >
+        <br>
+        <button class="button" onclick="myFunction2()">提示</button>
+        <div id="snackbar">谁家鸡蛋分开煮？！</div>
+        <a href="第4关.html"><button class="button">跳过</button></a>
+        <a href="第4关.html"><button class="button">重来</button></a>
+        <div id="timer" style="color:Brown"></div>
+</body>
+
+<script type="text/javascript"> 
+    
+    //底部弹出消息
+    function myFunction2() {
+    var x = document.getElementById("snackbar")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+    //表单
+    function myFunction3() {
+    var x, text;
+    x = document.getElementById("numb").value;
+    // 如果输入的值 x 不是数字或者不是4，就提示错误 
+    if (isNaN(x) || x < 4 || x > 4) {
+        text = "输入错误，游戏结束！你的测试结果为：三年级智商。";
+    } else {
+        text = "输入正确，恭喜通关！";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+    //计时器提醒
+            var oBox= document.getElementById('timer');       
+            var maxtime = 1 * 60;  
+            function CountDown() {
+                if (maxtime >= 0) {
+                    seconds = Math.floor(maxtime % 60);
+                    msg = "距离结束还有" + seconds + "秒";
+                    oBox.innerHTML = msg;
+                    if (maxtime == 30)alert("还剩30秒\n抓紧时间呦！");
+                                --maxtime;
+                    } else{
+                            clearInterval(timer);
+                            alert("时间到，游戏结束!\n你的测试结果为“三年级智商”。");
+                        }
+                    }
+                    timer = setInterval("CountDown()", 1000);                
+</script>
+</html>
