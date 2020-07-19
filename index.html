@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>猪头</title>
+    <style>
+	.center {
+		text-align: center;
+        margin: auto;
+        width: 60%;
+        border: 3px solid #73AD21;
+        padding: 10px;
+    }
+    .button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;   
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;/*绿色*/
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+    .button2{
+    	background-color: #008CBA;/*蓝色*/
+    }
+    .button3{
+    	background-color: #FFB6C1;/*粉色*/
+    }
+
+.button:hover {background-color:#e7e7e7; color: black;}
+
+.button:active {
+  background-color:#e7e7e7; color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+     /* 弹窗 (background) */
+.modal {
+    display: none; /* 默认隐藏 */
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* 弹窗内容 */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* 添加动画 */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* 关闭按钮 */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {
+	padding: 2px 16px;
+}
+    </style>
+</head>
+<body>
+	<div class="center">
+	<img src="img/标题.png" alt="title" width="214.5" height="115.5"/ >
+	<br><br><br>
+<form action="">
+    <a href="第1关.html">
+	    <input type="button" class="button button3"value="一年级"></a>
+	<a href="第2关.html">
+        <input type="button" class="button button3"value="二年级"></a>
+    <a href="第3关.html">
+        <input type="button" class="button button3"value="三年级"></a>
+    <a href="第4关.html">
+        <input type="button" class="button button3"value="四年级"></a>
+</form>
+<img src="img/左鸭.gif" alt="title" width="100" height="100"/ >
+    <a href="第1关.html">
+    	<button class="button">开始游戏
+    	</button></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    	<!-- 打开弹窗按钮 -->
+    	<button class="button button2" id="myBtn">游戏规则
+    	</button>
+    	<!-- 弹窗 -->
+        <div id="myModal" class="modal">
+    <!-- 弹窗内容 -->
+	  <div class="modal-content">
+	  <div class="modal-header">
+	    <span class="close">&times;</span>
+	    <h2>游戏规则</h2>
+	  </div>
+	  <div class="modal-body">
+	    <p>即将开始脑力大战...</p>
+	    <img src="img/闭嘴鸭.gif" alt="鸭鸭" style="width:200px;height:200px;padding:0px;margin:0px;vertical-align:middle;"/>
+	    <h3>规则：本次测试一共5题，每题作答时间60秒，成功pick答案即可进入下一关~<br>注意：脑筋急转弯最早起源于古代印度。就是指当思维遇到特殊的阻碍时，要很快的离开习惯的思路，<br>从别的方面来思考问题。现在泛指一些不能用通常的思路来回答的智力问答题。<br>快来测测你是几年级智商8~</h3>
+	  </div>
+	</div>
+</div>
+        <img src="img/右鸭.gif" alt="title" width="120" height="120"/ >
+    	<br><br><br>
+  <p><b>注意: </b>本游戏适用于8岁以上儿童，开动脑力，不要作弊哦！</p>
+</div>
+        <script type="text/javascript">
+        	// 获取弹窗
+var modal = document.getElementById('myModal');
+
+// 打开弹窗的按钮对象
+var btn = document.getElementById("myBtn");
+
+// 获取 <span> 元素，用于关闭弹窗 
+var span = document.getElementsByClassName("close")[0];
+
+// 点击按钮打开弹窗
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// 点击 <span> (x), 关闭弹窗
+span.onclick = function() {
+    modal.style.display = "none";
+}
+        </script>
+</body>
+</html>
